@@ -12,11 +12,15 @@
         <div class="container">
             <div class="col-xs-12 text-center">
                 <p>There are {{assassins.length}} assassins.</p>
-                <button class="btn btn-default btn-large" ng-click="assignTargets()">Assign targets</button>
+                <button class="btn btn-default btn-large" ng-click="startGame()">Begin</button>
+            </div>
+            <div class="col-xs-12 text-center active-assassin">
+                Hello {{activeAssassin.name}}. Your target is {{activeAssassin.target.name}}
+                <img ng-src="{{activeAssassin.target.src}}" alt="" class="img-responsive img-circle">
             </div>
             <div class="col-xs-4 col-md-3 text-center" ng-repeat="assassin in assassins">
                 <img ng-src="{{assassin.src}}" class="img-responsive img-circle" alt="">
-                <p>{{assassin.target}}</p>
+                <p>Target: {{assassin.target.name}}</p>
             </div>
         </div>
     </body>
