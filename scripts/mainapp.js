@@ -1,23 +1,23 @@
 var mainApp = angular.module("mainApp", []);
 mainApp.controller("MainCtrl", function($scope) {
-    $scope.activeAssassin = {};
+    $scope.activeAssassin;
     $scope.assassins = [
-        {name: "Joe Biden", src:"../images/portraits/biden.jpg", target:""},
-        {name: "Jeb Bush", src:"../images/portraits/jeb.jpg", target:""},
-        {name: "Ben Carson", src:"../images/portraits/carson.jpg", target:""},
-        {name: "Chris Christie", src:"../images/portraits/christie.jpg", target:""},
-        {name: "Hillary Clinton", src:"../images/portraits/hillary.jpg", target:""},
-        {name: "Ted Cruz", src:"../images/portraits/cruz.jpg", target:""},
-        {name: "Carly Fiorina", src:"../images/portraits/fiorina.jpg", target:""},
-        {name: "Mike Huckabee", src:"../images/portraits/huckabee.jpg", target:""},
-        {name: "John Kasich", src:"../images/portraits/kasich.JPG"},
-        {name: "Martin O'Malley", src:"../images/portraits/omalley.jpg", target:""},
-        {name: "Rand Paul", src:"../images/portraits/paul.jpg", target:""},
-        {name: "Marco Rubio", src:"../images/portraits/rubio.jpg", target:""},
-        {name: "Bernie Sanders", src:"../images/portraits/bernie.jpg", target:""},
-        {name: "Rick Santorum", src:"../images/portraits/santorum.jpg", target:""},
-        {name: "Donald Trump", src:"../images/portraits/trump.jpg", target:""},
-        {name: "Scott Walker", src:"../images/portraits/walker.jpg", target:""}
+        {name: "Joe Biden", src:"../img/portraits/biden.jpg", target:""},
+        {name: "Jeb Bush", src:"../img/portraits/jeb.jpg", target:""},
+        {name: "Ben Carson", src:"../img/portraits/carson.jpg", target:""},
+        {name: "Chris Christie", src:"../img/portraits/christie.jpg", target:""},
+        {name: "Hillary Clinton", src:"../img/portraits/hillary.jpg", target:""},
+        {name: "Ted Cruz", src:"../img/portraits/cruz.jpg", target:""},
+        {name: "Carly Fiorina", src:"../img/portraits/fiorina.jpg", target:""},
+        {name: "Mike Huckabee", src:"../img/portraits/huckabee.jpg", target:""},
+        {name: "John Kasich", src:"../img/portraits/kasich.JPG"},
+        {name: "Martin O'Malley", src:"../img/portraits/omalley.jpg", target:""},
+        {name: "Rand Paul", src:"../img/portraits/paul.jpg", target:""},
+        {name: "Marco Rubio", src:"../img/portraits/rubio.jpg", target:""},
+        {name: "Bernie Sanders", src:"../img/portraits/bernie.jpg", target:""},
+        {name: "Rick Santorum", src:"../img/portraits/santorum.jpg", target:""},
+        {name: "Donald Trump", src:"../img/portraits/trump.jpg", target:""},
+        {name: "Scott Walker", src:"../img/portraits/walker.jpg", target:""}
     ];
 
     $scope.startGame = function() {
@@ -46,9 +46,6 @@ mainApp.controller("MainCtrl", function($scope) {
     $scope.setActive = function() {
         var random = Math.floor(Math.random() * $scope.assassins.length);
         $scope.activeAssassin = $scope.assassins[random];
-<<<<<<< HEAD
-=======
         console.log("ACTIVE: " + $scope.activeAssassin.name);
->>>>>>> nicole
     }
 });
