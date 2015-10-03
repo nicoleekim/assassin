@@ -1,5 +1,6 @@
 var mainApp = angular.module("mainApp", []);
 mainApp.controller("MainCtrl", function($scope) {
+    $scope.activeAssassin;
     $scope.assassins = [
         {name: "Joe Biden", src:"../images/portraits/biden.jpg", target:""},
         {name: "Jeb Bush", src:"../images/portraits/jeb.jpg", target:""},
@@ -19,11 +20,16 @@ mainApp.controller("MainCtrl", function($scope) {
         {name: "Scott Walker", src:"../images/portraits/walker.jpg", target:""}
     ];
 
+    $scope.startGame = function() {
+        $scope.assignTargets();
+        $scope.setActive();
+    }
+
     // Randomly assigns targets to each of the assassins
     $scope.assignTargets = function() {
         var init = [];
         for (var i = 0; i < $scope.assassins.length; i++) {
-            init.push($scope.assassins[i].name);
+            init.push($scope.assassins[i]);
         }
         for (var i = 0; i < init.length-1; i++) {
             var switchWith = Math.floor(Math.random() * (init.length - (i+1)) + (i+1));
@@ -32,8 +38,14 @@ mainApp.controller("MainCtrl", function($scope) {
             init[i] = temp;
         }
         for (var i = 0; i < init.length; i++) {
-            $scope.assassins[i].target = init[i].name;
-            console.log($scope.assassins[i].name + " -> " + init[i]);
+            $scope.assassins[i].target = init[i];
+            console.log($scope.assassins[i].name + " -> " + init[i].name);
         }
     };
+
+    $scope.setActive = function() {
+        var random = Math.floor(Math.random() * $scope.assassins.length);
+        $scope.activeAssassin = $scope.assassins[random];
+        console.log("ACTIVE: " + $scope.activeAssassin.name);
+    }
 });

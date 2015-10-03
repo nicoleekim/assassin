@@ -46,5 +46,6 @@ mainApp.controller("MainCtrl", function($scope) {
     $scope.setActive = function() {
         var random = Math.floor(Math.random() * $scope.assassins.length);
         $scope.activeAssassin = $scope.assassins[random];
+        console.log("ACTIVE: " + $scope.activeAssassin.name);
     }
 });

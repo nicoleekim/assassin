@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ASSASSIN - Status</title>
+    <title>ASSASSIN - Index</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -32,7 +32,7 @@
     <![endif]-->
 
         <script src="../bower_components/angular/angular.js"></script>
-        <script src="../scripts/mainapp.js"></script>
+        <script src="scripts/mainapp.js"></script>
 
 </head>
 
@@ -66,16 +66,20 @@
 
     <section id="services">
         <body ng-controller="MainCtrl">
-        <div class="container">
-            <div class="col-xs-12 text-center">
-                <p>There are {{assassins.length}} assassins.</p>
-                <button class="btn btn-default btn-large" ng-click="assignTargets()">Assign targets</button>
+            <div class="container">
+                <div class="col-xs-12 text-center">
+                    <p>There are {{assassins.length}} assassins.</p>
+                    <button class="btn btn-default btn-large" ng-click="startGame()">Begin</button>
+                </div>
+                <div class="col-xs-12 text-center active-assassin" ng-show="activeAssassin">
+                    Hello {{activeAssassin.name}}. Your target is {{activeAssassin.target.name}}
+                    <img ng-src="{{activeAssassin.target.src}}" alt="" class="img-responsive img-circle">
+                </div>
+                <div class="col-xs-4 col-md-3 text-center" ng-repeat="assassin in assassins">
+                    <img ng-src="{{assassin.src}}" class="img-responsive img-circle" alt="">
+                    <p>Target: {{assassin.target.name}}</p>
+                </div>
             </div>
-            <div class="col-xs-4 col-md-3 text-center" ng-repeat="assassin in assassins">
-                <img ng-src="{{assassin.src}}" class="img-responsive img-circle" alt="">
-                <p>{{assassin.target}}</p>
-            </div>
-        </div>
     </body>
     </section>
 
