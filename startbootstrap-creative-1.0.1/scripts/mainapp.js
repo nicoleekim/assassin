@@ -1,6 +1,6 @@
 var mainApp = angular.module("mainApp", []);
 mainApp.controller("MainCtrl", function($scope) {
-    $scope.activeAssassin = {};
+    $scope.activeAssassin;
     $scope.assassins = [
         {name: "Joe Biden", src:"../images/portraits/biden.jpg", target:""},
         {name: "Jeb Bush", src:"../images/portraits/jeb.jpg", target:""},
@@ -46,9 +46,6 @@ mainApp.controller("MainCtrl", function($scope) {
     $scope.setActive = function() {
         var random = Math.floor(Math.random() * $scope.assassins.length);
         $scope.activeAssassin = $scope.assassins[random];
-<<<<<<< HEAD
-=======
         console.log("ACTIVE: " + $scope.activeAssassin.name);
->>>>>>> nicole
     }
 });
