@@ -1,13 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="mainApp">
     <head>
         <meta charset="utf-8">
         <title>Assassin App</title>
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="scripts/mainapp.js"></script>
     </head>
-    <body>
+    <body ng-controller="MainCtrl">
         <div class="container">
-            <p>Here is some text.</p>
+            <div class="col-xs-12 text-center">
+                <p>There are {{assassins.length}} assassins.</p>
+                <button class="btn btn-default btn-large" ng-click="assignTargets()">Assign targets</button>
+            </div>
+            <div class="col-xs-4 col-md-3 text-center" ng-repeat="assassin in assassins">
+                <img ng-src="{{assassin.src}}" class="img-responsive img-circle" alt="">
+                <p>{{assassin.target}}</p>
+            </div>
         </div>
     </body>
 </html>
