@@ -36,7 +36,7 @@
     
 </head>
 
-<body id="page-top">
+<body id="page-top" ng-controller="MainCtrl">
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -59,13 +59,9 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
-<header></header>
-
     
 
     <section id="services">
-        <body ng-controller="MainCtrl">
         <div class="container">
             <div class="col-xs-12 text-center">
                 <p>There are {{assassins.length}} assassins.</p>
@@ -76,7 +72,6 @@
                 <p>{{assassin.target}}</p>
             </div>
         </div>
-    </body>
     </section>
 
    
@@ -84,8 +79,7 @@
     <aside class="bg-dark">
         <div class="container text-center">
             <div class="call-to-action">
-                <h2>Free Download at Start Bootstrap!</h2>
-                <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
+                
             </div>
         </div>
     </aside>
