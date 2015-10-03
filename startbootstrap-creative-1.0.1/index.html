@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html ng-app="mainApp">
 <head>
 
     <meta charset="utf-8">
@@ -9,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ASSASSIN - Main</title>
+    <title>ASSASSIN - Status</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -32,6 +31,9 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../scripts/mainapp.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -51,49 +53,33 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                
+
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
     </nav>
 
-    <header>
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1>Assassin</h1>
-                <hr>
-                <p>Organize a friendly game of assassin with this page! <br>
-                    We'll give you a target- you take care of the rest.</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Get Started</a>
-            </div>
-        </div>
-    </header>
+<header></header>
 
-    <section class="bg-primary" id="about">
+
+
+    <section id="services">
+        <body ng-controller="MainCtrl">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">You</h2>
-                    <hr class="light">
-                   <form id="form1" action="form_action.asp">
-                      Name:<br>
-                      <input type="text" name="name">
-                      <br><br>
-                      Game ID:<br>
-                      <input type="text" name="gameid"><br><br>
-                    Photo:<br>
-                    <input type="text" name="photo"> <input type=button value="Browse.."> <input type=button value="Upload">
-                       <br><br>
-                    <input type="submit" onclick="myFunction()" value="Submit">
-                       </form>
-                </div>
+            <div class="col-xs-12 text-center">
+                <p>There are {{assassins.length}} assassins.</p>
+                <button class="btn btn-default btn-large" ng-click="assignTargets()">Assign targets</button>
+            </div>
+            <div class="col-xs-4 col-md-3 text-center" ng-repeat="assassin in assassins">
+                <img ng-src="{{assassin.src}}" class="img-responsive img-circle" alt="">
+                <p>{{assassin.target}}</p>
             </div>
         </div>
+    </body>
     </section>
 
-    
-   
+
 
     <aside class="bg-dark">
         <div class="container text-center">
