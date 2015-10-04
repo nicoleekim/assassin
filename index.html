@@ -71,13 +71,14 @@
                     <p>There are {{assassins.length}} assassins.</p>
                     <button class="btn btn-default btn-large" ng-click="startGame()">Begin</button>
                 </div>
-                <div class="col-xs-12 text-center active-assassin" ng-show="activeAssassin">
+                <div class="col-xs-12 text-center" ng-show="activeAssassin">
                     Hello {{activeAssassin.name}}. Your target is {{activeAssassin.target.name}}
-                    <img ng-src="{{activeAssassin.target.src}}" alt="" class="img-responsive img-circle">
+                    <img ng-src="{{activeAssassin.target.src}}" alt="" class="img-responsive img-circle center-block">
                 </div>
+                <h2>Active Assassins</h2>
                 <div class="col-xs-4 col-md-3 text-center" ng-repeat="assassin in assassins">
                     <img ng-src="{{assassin.src}}" class="img-responsive img-circle" alt="">
-                    <p>Target: {{assassin.target.name}}</p>
+                    <p ng-show="assassin.target">Target: {{assassin.target.name}}</p>
                 </div>
             </div>
     </body>
